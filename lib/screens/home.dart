@@ -11,32 +11,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _page = 0;
-  late PageController pageController;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    pageController = PageController();
-  }
+  int currentindex = 0;
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    pageController.dispose();
-  }
-
-  void navigationTapped(int page) {
-    pageController.jumpToPage(page);
-  }
-
-  void onPageChanged(int page) {
-    setState(() {
-      _page = page;
-    });
-  }
+  final screens = homeScreenItems;
 
   @override
   Widget build(BuildContext context) {
@@ -44,28 +22,28 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Explore",
+            "Get Cooking",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           leading: GestureDetector(
-            child: const Icon(Icons.home),
+            child: const Icon(Icons.home, color: Colors.black,),
             onTap: () {},
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(CupertinoIcons.search),
+              icon: const Icon(CupertinoIcons.search, color: Colors.black,),
             ),
           ],
           backgroundColor: appbarColor,
         ),
-        body: PageView(
-          children: homeScreenItems,
-          controller: pageController,
-          onPageChanged: onPageChanged,
-          physics: const NeverScrollableScrollPhysics(),
+        body: Center(
+          child: screens[currentindex],
         ),
         bottomNavigationBar: CupertinoTabBar(
+          onTap: (index) => setState(() =>
+            currentindex = index,
+          ),
           backgroundColor: appbarColor,
           items: const [
             BottomNavigationBarItem(
