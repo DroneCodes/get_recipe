@@ -37,9 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
           backgroundColor: appbarColor,
         ),
-        body: Center(
-          child: screens[currentindex],
-        ),
+        body: screens[currentindex],
         bottomNavigationBar: CupertinoTabBar(
           onTap: (index) => setState(() =>
             currentindex = index,

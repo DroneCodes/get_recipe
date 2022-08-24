@@ -41,43 +41,48 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white
+                    ),
+                    child: const Text("Popular", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
                   ),
-                  child: const Text("Popular", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
-                ),
 
-                const SizedBox(
-                  width: 30,
-                ),
-
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white
+                  const SizedBox(
+                    width: 30,
                   ),
-                  child: const Text("Recommended", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
-                ),
 
-                const SizedBox(
-                  width: 30,
-                ),
-
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white
+                    ),
+                    child: const Text("Recommended", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
                   ),
-                  child: const Text("New", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
-                ),
-              ],
+
+                  const SizedBox(
+                    width: 30,
+                  ),
+
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white
+                    ),
+                    child: const Text("New", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),
+                  ),
+                ],
+              ),
             ),
 
             SizedBox(
@@ -92,7 +97,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
             )
           ],
         ),
-      ),
     );
   }
 }
