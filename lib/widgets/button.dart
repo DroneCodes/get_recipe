@@ -25,7 +25,7 @@ class WelcomeButton extends StatelessWidget {
             "Get Started",
             style: TextStyle(
               color: welcometextColor,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.normal,
             ),
           ),
           width: 125,
