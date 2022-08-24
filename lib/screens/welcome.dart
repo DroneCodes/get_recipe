@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_recipe/screens/home.dart';
 import 'package:get_recipe/utils/colors.dart';
+import 'package:get_recipe/widgets/button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -9,56 +11,61 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: mobilebackgroundColor,
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.only(top: 30),
-          child: Column(
-            children: [
-              Center(
-                child: Image.asset(
-                  "assets/cook_image.png",
-                  height: 600,
-                  width: 250,
-                ),
+      body: Container(
+        padding: EdgeInsets.only(top: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              "assets/pan.png",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              "Cook Like",
+              style: TextStyle(
+                color: welcometextColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
               ),
-              const SizedBox(
-                height: 10,
+            ),
+            const SizedBox(
+              height: 3,
+            ),
+            const Text(
+              "A Chef",
+              style: TextStyle(
+                color: welcometextColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
               ),
-              Container(
-                alignment: Alignment.bottomRight,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const HomeScreen();
-                    }));
-                  },
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 30,
-                        child: Icon(
-                          Icons.chevron_right,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 6,
-                      ),
-                      Text(
-                        "Welcome",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "Cook professional dishes",
+              style: TextStyle(
+                color: welcometextColor,
+                fontWeight: FontWeight.bold,
               ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            const Text(
+              "Right in your kitchen",
+              style: TextStyle(
+                color: welcometextColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const WelcomeButton(),
+          ],
         ),
       ),
     );
